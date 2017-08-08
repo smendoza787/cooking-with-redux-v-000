@@ -9,3 +9,15 @@ export default function ingredients(state = [], action){
       return state;
   }
 }
+
+export function unselectedIngredients(ingredients, selectedIngredientIds) {
+  return ingredients.filter(function(ingredient) {
+    return selectedIngredientIds.includes(ingredient.id);
+  });
+}
+
+export function findIngredientById(id, ingredients) {
+  return ingredients.find(function(ingredient) {
+    return ingredient.id === id;
+  });
+}
